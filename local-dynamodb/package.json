@@ -1,0 +1,13 @@
+{
+  "name": "local-dynamodb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "offline:db": "java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb"
+  },
+  "dependencies": {
+    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-offline": "^6.9.0"
+  }
+}

@@ -1,0 +1,25 @@
+
+POST http://localhost:3000/dev/job HTTP/1.1
+Content-Type: application/json
+
+{
+  "jobId": "123asd6",
+  "title": "Web Developer",
+    "pay": {
+        "currency": "$",
+        "min": "30000",
+        "max": "150000"
+    },
+    "description": "Coda is looking for dynamic superstars for chennai location who can transform thoughts into beautiful web application using code.",
+    "skills": ["javascript", "html", "css", "typescript", "git", "data structures and algorithms"],
+    "experience": {
+        "min": 1,
+        "max": 5
+    },
+    "vacancy": 10
+}
+
+
+
+
+

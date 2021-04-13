@@ -1,0 +1,77 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: coda-job-portal
+
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
+  - serverless-webpack
+
+functions:
+  createJob:
+    handler: src/lambdas/createJob.handler
+    events:
+      - http:
+          path: /create/job
+          method: post
+          cors: true
+
+  getJob:
+    handler: src/lambdas/getJob.handler
+    events:
+      - http:
+          path: /job
+          method: post
+          cors: true
+  deleteJob:
+    handler: src/lambdas/deleteJob.handler
+    events:
+      - http:
+          path: /delete/job
+          method: delete
+          cors: true
+  getJobs:
+    handler: src/lambdas/getJobs.handler
+    events:
+      - http:
+          path: /jobs
+          method: get
+          cors: true
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  tableName: Jobs-Table
+  dynamodb:
+    stages:
+      - dev
+      - offline
+    start:
+      port: 8000
+      inMemory: true
+      dynamodb:
+      inMemory: true
+      migrate: true
+    migration:
+      dir: offline/migrations
+  

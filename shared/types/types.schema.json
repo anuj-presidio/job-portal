@@ -1,0 +1,142 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Job.EntityType": {
+            "type": "string",
+            "enum": [
+                "Job"
+            ]
+        },
+        "Job.IJob": {
+            "title": "Job.IJob",
+            "type": "object",
+            "properties": {
+                "jobId": {
+                    "type": "string",
+                    "title": "jobId"
+                },
+                "title": {
+                    "type": "string",
+                    "title": "title"
+                },
+                "pay": {
+                    "type": "object",
+                    "properties": {
+                        "currency": {
+                            "type": "string",
+                            "title": "currency"
+                        },
+                        "min": {
+                            "type": "number",
+                            "title": "min"
+                        },
+                        "max": {
+                            "type": "number",
+                            "title": "max"
+                        }
+                    },
+                    "required": [
+                        "max",
+                        "min"
+                    ],
+                    "title": "pay"
+                },
+                "description": {
+                    "type": "string",
+                    "title": "description"
+                },
+                "location": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "title": "location"
+                },
+                "skills": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "skills"
+                },
+                "experience": {
+                    "type": "object",
+                    "properties": {
+                        "min": {
+                            "type": "number",
+                            "title": "min"
+                        },
+                        "max": {
+                            "type": "number",
+                            "title": "max"
+                        }
+                    },
+                    "required": [
+                        "max",
+                        "min"
+                    ],
+                    "title": "experience"
+                },
+                "vacancy": {
+                    "minimum": 0,
+                    "type": "number",
+                    "title": "vacancy"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "title": "createdAt"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "title": "updatedAt"
+                }
+            },
+            "required": [
+                "title"
+            ]
+        },
+        "Job.Pay": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "type": "string",
+                    "title": "currency"
+                },
+                "min": {
+                    "type": "number",
+                    "title": "min"
+                },
+                "max": {
+                    "type": "number",
+                    "title": "max"
+                }
+            },
+            "required": [
+                "max",
+                "min"
+            ]
+        },
+        "Job.Experience": {
+            "type": "object",
+            "properties": {
+                "min": {
+                    "type": "number",
+                    "title": "min"
+                },
+                "max": {
+                    "type": "number",
+                    "title": "max"
+                }
+            },
+            "required": [
+                "max",
+                "min"
+            ]
+        }
+    }
+}
