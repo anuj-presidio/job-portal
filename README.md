@@ -14,9 +14,13 @@ Depending on your preferred package manager, follow the instructions below to de
 
 ### Running Locally
 
-In order to test the hello function locally, run the following command:
+In order to test the service locally, run the following command:
 
+- `cd backend`
 - `sls offline`
+
+- `cd local-dynamodb`
+- `sls offline:db`
 
 Check the [sls invoke local command documentation](https://www.serverless.com/framework/docs/providers/aws/cli-reference/invoke-local/) for more information.
 
