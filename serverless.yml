@@ -70,7 +70,6 @@ custom:
       port: 8000
       inMemory: true
       dynamodb:
-      inMemory: true
       migrate: true
     migration:
       dir: offline/migrations

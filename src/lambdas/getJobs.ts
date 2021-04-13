@@ -7,6 +7,8 @@ import {
   renderNotFound,
 } from "../../shared/handlers/middlewares";
 
+import resetTable from "../../shared/dynamodb/dynamodb";
+
 const inputSchema = {
   type: "object",
   properties: {},

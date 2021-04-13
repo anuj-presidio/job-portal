@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "offline:db": "java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb"
+    "offline:db": "sls dynamodb start --stage offline",
+    "offline:install": "sls dynamodb install"
   },
   "dependencies": {
-    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-dynamodb-local": "0.2.30",
     "serverless-offline": "^6.9.0"
   }
 }

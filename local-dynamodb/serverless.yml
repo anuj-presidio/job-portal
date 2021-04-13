@@ -40,8 +40,8 @@ custom:
       inMemory: true
       migrate: true
       migration: true
-      port: 4101
-      seed: true
+      port: 8000
+      seed: false
     migration:
       dir: offline/migrations
 
@@ -53,7 +53,7 @@ resources:
         TableName: Jobs-Table
         BillingMode: "PAY_PER_REQUEST"
         AttributeDefinitions:
-          - AttributeName: "JobId"
+          - AttributeName: "jobId"
             AttributeType: "S"
         KeySchema:
           - AttributeName: "jobId"
